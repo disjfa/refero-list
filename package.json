@@ -1,0 +1,40 @@
+{
+  "name": "refero-list",
+  "version": "0.1.0",
+  "description": "Homepage",
+  "homepage": "https://github.com/disjfa/refero-list#readme",
+  "keywords": [
+    "css",
+    "sass",
+    "mobile-first",
+    "responsive",
+    "front-end",
+    "web"
+  ],
+  "scripts": {
+    "build": "encore prod",
+    "dev": "bundle exec jekyll serve & encore dev --watch",
+    "css-lint": "stylelint --syntax scss \"scss/**/*.scss\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/disjfa/refero-list.git"
+  },
+  "style": "css/refero-list.css",
+  "sass": "scss/refero-list.scss",
+  "author": "disjfa",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/disjfa/refero-list/issues"
+  },
+  "dependencies": {
+    "@symfony/webpack-encore": "^0.17.0",
+    "node-sass": "^4.6.0",
+    "sass-loader": "^6.0.6",
+    "stylelint": "^8.2.0",
+    "stylelint-config-recommended-scss": "^2.0.0",
+    "stylelint-config-standard": "^17.0.0",
+    "stylelint-order": "^0.7.0",
+    "stylelint-scss": "^2.1.0"
+  }
+}

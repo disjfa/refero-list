@@ -1,0 +1,41 @@
+---
+layout: default
+---
+<div class="bg-light">
+    <br>
+    <div class="container">
+        <div class="jumbotron bg-dark">
+            <h1 class="text-white">refero-list</h1>
+            <hr class="text-white bg-white">
+            <p class="lead text-white">
+                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorem ea, enim error et, eum
+                facilis id magni officiis quam, quia quibusdam quidem quod similique tempore veniam? A, magnam.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        {% for i in (1..10) %}
+            <article role="presentation" class="refero">
+                <div class="refero-title">
+                    <div class="refero-icon">
+                        <i class="fa fa-fw fa-paper-plane"></i>
+                    </div>
+                    <h2>List item no {{ i }}</h2>
+                </div>
+                <div class="refero-more">
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deserunt laudantium minima
+                        numquam obcaecati similique tempora voluptas? Accusamus aliquid cum, eius error id iusto maiores
+                        perspiciatis quae quos repellat voluptas.
+                    </p>
+                    <a href="{{ site.github_url }}" aria-label="Check it out on github" class="refero-btn">
+                        Check it out on github
+                    </a>
+                </div>
+            </article>
+        {% endfor %}
+    </div>
+    <br><br><br><br><br><br><br>
+    {% include footer.html %}
+</div>

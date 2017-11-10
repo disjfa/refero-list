@@ -1,0 +1,158 @@
+@import "variables";
+
+.refero {
+  background: lighten($color-clouds, 5%);
+  border-color: $color-emerald;
+  border-radius: 0 0 7px 7px;
+  border-style: solid;
+  border-width: 0 4px 7px;
+  box-shadow: 0 0 4px #aaa;
+  margin: 5vmin;
+  padding: 0 1.5rem;
+  position: relative;
+  transition: 0.3s all;
+  z-index: 100;
+
+  .refero-btn {
+    background: $color-emerald;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: lighten($color-emerald, 10%);
+    }
+
+    &::before {
+      content: "\00BB\ ";
+    }
+  }
+
+  .refero-title {
+    position: relative;
+
+    @media (min-width: 992px) {
+      padding: 20px;
+    }
+
+    .refero-icon {
+      align-items: center;
+      background: $color-emerald;
+      border-radius: 50%;
+      border: 1px solid $color-clouds;
+      display: flex;
+      height: 3em;
+      justify-content: center;
+      margin-top: -1.5em;
+      text-align: center;
+      top: 50%;
+      transition: 0.5s all;
+      width: 3em;
+
+      .fa {
+        color: $color-clouds;
+        transition: 0.5s all;
+        font-size: 1.5em;
+      }
+    }
+  }
+
+  .refero-more {
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #000;
+    opacity: 0;
+    padding: 1rem;
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    transition: 0.3s all;
+    width: 90%;
+    z-index: 150;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 10px 15px #aaa;
+    z-index: 101;
+
+    .refero-more {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .refero-icon {
+      background: $color-clouds;
+      border-color: $color-emerald;
+
+      .fa {
+        color: $color-emerald;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    @media (min-width: 992px) {
+      border-right-width: 0;
+      margin-left: 45%;
+      text-align: left;
+
+      .refero-icon {
+        left: 0;
+        position: absolute;
+        transform: translate(-3em, 0);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.05) rotate(2deg);
+    }
+  }
+
+  &:nth-child(even) {
+    @media (min-width: 992px) {
+      border-left-width: 0;
+      margin-right: 45%;
+      text-align: right;
+
+      .refero-icon {
+        position: absolute;
+        right: 0;
+        transform: translate(3em, 0);
+      }
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.05) rotate(-2deg);
+    }
+  }
+}
+
+@mixin make-refero-colors($colors: $refero-colors) {
+  $length: length($colors);
+
+  @each $name, $color in $colors {
+    $i: index($colors, ($name $color));
+    $key: "#{$length}n+#{$i}";
+
+    .refero:nth-child(#{$key}) {
+      border-color: $color;
+
+      .refero-btn {
+        background-color: $color;
+
+        &:hover {
+          background-color: lighten($color, 10%);
+        }
+      }
+    }
+  }
+}
+
+@include make-refero-colors;

@@ -1,0 +1,16 @@
+$color-clouds: #ecf0f1;
+$color-emerald: #2ecc71;
+$color-orange: #f39c12;
+$color-pumpkin: #d35400;
+$color-green-sea: #16a085;
+$color-wisteria: #8e44ad;
+$color-asbestos: #7f8c8d;
+
+$refero-colors: (
+  "emerald": $color-emerald,
+  "orange" : $color-orange,
+  "pumpkin" : $color-pumpkin,
+  "green-sea" : $color-green-sea,
+  "wisteria" : $color-wisteria,
+  "asbestos" : $color-asbestos,
+) !default;
