@@ -1,15 +1,12 @@
 # refero-list
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
-
 [![version][version-badge]][package]
 [![MIT License][license-badge]][LICENSE]
-[![All Contributors](https://img.shields.io/badge/all_contributors-0-orange.svg?style=flat-square)](#contributors)
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors)
 
 [![Watch on GitHub][github-watch-badge]][github-watch]
 [![Star on GitHub][github-star-badge]][github-star]
 [![Tweet][twitter-badge]][twitter]
 
-A simple and useful admin page interface. An example can be found here: [refero-list](https://disjfa.github.io/refero-list/).
 Refero list is a simple and fun css list you can add to your website. Hover or tap an item to get an info block where 
 you can add extra info. Just try and enjoy! Check out the [demo](https://disjfa.github.io/refero-list/) for an example.
 

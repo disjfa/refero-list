@@ -1,11 +1,12 @@
 {
   "name": "refero-list",
   "version": "0.1.0",
-  "description": "Homepage",
+  "description": "Interactive list for your website.",
   "homepage": "https://github.com/disjfa/refero-list#readme",
   "keywords": [
     "css",
     "sass",
+    "menu",
     "mobile-first",
     "responsive",
     "front-end",
