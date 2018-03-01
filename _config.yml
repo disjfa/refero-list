@@ -13,10 +13,10 @@
 # you will see them accessed via {{ site.title }}, {{ site.email }}, and so on.
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
-title: disjfa.nl
+title: Refero list
 email: disjfa@disjfa.nl
 description: >
-  Make an awesome list witch css
+  Make an awesome list with css!
 baseurl: "/refero-list"
 url: "https://disjfa.github.io"
 github_url:  https://github.com/disjfa/refero-list
@@ -26,12 +26,15 @@ google_analytics: UA-83598448-1
 
 # Build settings
 markdown: kramdown
-gems:
-  - jekyll-feed
 exclude:
   - Gemfile
   - Gemfile.lock
   - node_modules
   - scss
+  - LICENSE
+  - package.json
+  - package-lock.json
+  - README.md
+  - webpack.config.js
 
 host: 0.0.0.0

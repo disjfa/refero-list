@@ -12,9 +12,13 @@
     "web"
   ],
   "scripts": {
-    "build": "encore prod",
+    "build": "encore production && bundle exec jekyll build",
     "dev": "bundle exec jekyll serve & encore dev --watch",
-    "css-lint": "stylelint --syntax scss \"scss/**/*.scss\""
+    "css-lint": "stylelint --syntax scss \"scss/**/*.scss\"",
+    "all-contributors-add": "all-contributors add",
+    "all-contributors-generate": "all-contributors generate",
+    "deploy": "gh-pages -d _site",
+    "favicon": "gulp favicon"
   },
   "repository": {
     "type": "git",
@@ -27,8 +31,14 @@
   "bugs": {
     "url": "https://github.com/disjfa/refero-list/issues"
   },
+  "browserslist": [
+    "last 2 versions",
+    "ios >= 8"
+  ],
   "dependencies": {
     "@symfony/webpack-encore": "^0.17.0",
+    "all-contributors-cli": "^4.11.0",
+    "gh-pages": "^1.1.0",
     "node-sass": "^4.6.0",
     "sass-loader": "^6.0.6",
     "stylelint": "^8.2.0",
@@ -36,5 +46,9 @@
     "stylelint-config-standard": "^17.0.0",
     "stylelint-order": "^0.7.0",
     "stylelint-scss": "^2.1.0"
+  },
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "postcss-loader": "^2.1.1"
   }
 }

@@ -8,8 +8,9 @@ layout: default
             <h1 class="text-white">refero-list</h1>
             <hr class="text-white bg-white">
             <p class="lead text-white">
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias beatae dolorem ea, enim error et, eum
-                facilis id magni officiis quam, quia quibusdam quidem quod similique tempore veniam? A, magnam.
+                Refero list is a simple and fun css list you can add to your website. Hover or tap an item to get an
+                info block where you can add extra info. Just try and enjoy! Check out the
+                <a href="{{ site.github_url }}" class="text-success"><i class="fa fa-github"></i> github</a> for instructions.
             </p>
         </div>
     </div>
@@ -17,12 +18,13 @@ layout: default
     <div class="container">
         {% for i in (1..10) %}
             <article role="presentation" class="refero">
-                <div class="refero-title">
+                <div class="refero-block"></div>
+                <h2 class="refero-title">
                     <div class="refero-icon">
-                        <i class="fa fa-fw fa-paper-plane"></i>
+                        <i class="fa fa-fw fa-bell"></i>
                     </div>
-                    <h2>List item no {{ i }}</h2>
-                </div>
+                    Refero item no {{ i }}
+                </h2>
                 <div class="refero-more">
                     <p>
                         Lorem ipsum dolor sit amet, consectetur adipisicing elit. Delectus deserunt laudantium minima

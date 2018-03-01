@@ -8,4 +8,8 @@ Encore
   .enableSassLoader()
   .enableSourceMaps(!Encore.isProduction());
 
+if (Encore.isProduction()) {
+  Encore.enablePostCssLoader();
+}
+
 module.exports = Encore.getWebpackConfig();

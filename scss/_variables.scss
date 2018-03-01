@@ -14,3 +14,11 @@ $refero-colors: (
   "wisteria" : $color-wisteria,
   "asbestos" : $color-asbestos,
 ) !default;
+
+$refero-breakpoint: 992px !default;
+$refero-background: lighten($color-clouds, 5%) !default;
+$refero-border-radius: 0 0 7px 7px !default;
+$refero-border-style: solid !default;
+$refero-border-width: 0 4px 7px !default;
+$refero-box-shadow: 0 0 4px #aaa !default;
+$refero-color-default: $color-emerald !default;

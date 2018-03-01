@@ -1,0 +1,194 @@
+.refero {
+  background: $refero-background;
+  border-radius: $refero-border-radius;
+  border-color: $refero-color-default;
+  border-style: $refero-border-style;
+  border-width: $refero-border-width;
+  box-shadow: $refero-box-shadow;
+  margin: 5vmin;
+  padding: 0 1.5rem;
+  position: relative;
+  transition: 0.3s all;
+  z-index: 100;
+
+  .refero-btn {
+    background: $refero-color-default;
+    color: #fff;
+    display: inline-block;
+    padding: 5px 10px;
+    text-decoration: none;
+
+    &:hover {
+      background-color: lighten($refero-color-default, 10%);
+    }
+
+    &::before {
+      content: "\00BB\ ";
+    }
+  }
+
+  .refero-block {
+    background: $refero-color-default;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: -1px;
+    right: 0;
+    transition: 0.3s all;
+  }
+
+  .refero-title {
+    position: relative;
+    cursor: pointer;
+    padding: 1em 0;
+    margin: 0;
+
+    @media (min-width: $refero-breakpoint) {
+      padding: 20px;
+    }
+
+    .refero-icon {
+      align-items: center;
+      background: $refero-color-default;
+      border-radius: 50%;
+      border: 1px solid $color-clouds;
+      display: inline-block;
+      justify-content: center;
+      text-align: center;
+      transition: 0.5s all;
+      padding: 0.2em;
+
+      .fa {
+        color: $color-clouds;
+        transition: 0.5s all;
+        font-size: 0.9em;
+      }
+    }
+  }
+
+  .refero-more {
+    background: white;
+    border-radius: 2px;
+    box-shadow: 0 0 15px #000;
+    opacity: 0;
+    padding: 1rem;
+    pointer-events: none;
+    position: absolute;
+    text-align: left;
+    transition: 0.3s all;
+    width: 90%;
+    z-index: 150;
+  }
+
+  &:hover,
+  &:focus,
+  &:active {
+    box-shadow: 0 10px 15px #aaa;
+    z-index: 101;
+
+    .refero-block {
+      right: 0;
+    }
+
+    .refero-more {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    .refero-icon {
+      background: $color-clouds;
+      border-color: $refero-color-default;
+
+      .fa {
+        color: $refero-color-default;
+      }
+    }
+  }
+
+  &:nth-child(odd) {
+    @media (min-width: $refero-breakpoint) {
+      border-right-width: 0;
+      margin-left: 45%;
+      text-align: left;
+
+      .refero-icon {
+        left: 0;
+        top: 0.5em;
+        position: absolute;
+        transform: translate(-1.6em, 0);
+      }
+    }
+
+    .refero-block {
+      right: 100%;
+      left: -1px;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.05) rotate(2deg);
+
+      .refero-block {
+        right: 0;
+      }
+    }
+  }
+
+  &:nth-child(even) {
+    @media (min-width: $refero-breakpoint) {
+      border-left-width: 0;
+      margin-right: 45%;
+      text-align: right;
+
+      .refero-icon {
+        position: absolute;
+        right: 0;
+        top: 0.5em;
+        transform: translate(1.6em, 0);
+      }
+    }
+
+    .refero-block {
+      right: -1px;
+      left: 100%;
+    }
+
+    &:hover,
+    &:focus,
+    &:active {
+      transform: scale(1.05) rotate(-2deg);
+
+      .refero-block {
+        left: 0;
+      }
+    }
+  }
+}
+
+@mixin make-refero-colors($colors: $refero-colors) {
+  $length: length($colors);
+
+  @each $name, $color in $colors {
+    $i: index($colors, ($name $color));
+    $key: "#{$length}n+#{$i}";
+
+    .refero:nth-child(#{$key}) {
+      border-color: $color;
+
+      .refero-block {
+        background: $color;
+      }
+
+      .refero-btn {
+        background-color: $color;
+
+        &:hover {
+          background-color: lighten($color, 10%);
+        }
+      }
+    }
+  }
+}
+
+@include make-refero-colors;
